@@ -11,9 +11,37 @@ body {
     height: 100vh;
 }
 
+/* FORM */
 #dataForm {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 2em;
+}
+
+/* INPUTS */
+
+/* Name inputs div */
+.name_inputs {
+    display: flex;
+    gap: 1em;
+    padding: 2em;
+}
+
+/* First Init */
+#first_initial {
+    width: 30%;
+    padding: 2em;
+}
+
+/* Last Name */
+#last_name {
+    width: 70%;
+    padding: 2em;
+}
+
+/* Pin Number */
+#pin_num {
+    padding: 2em;
 }
