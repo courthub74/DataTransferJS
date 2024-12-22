@@ -1,18 +1,19 @@
 * {
-    background-color: rgb(39, 3, 39);
-    color: rgb(69, 69, 138);
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: rgb(8, 2, 8);
+    color: rgb(77, 77, 109);
+   font-family: 'Times New Roman', Times, serif;
 }
 
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
 /* FORM */
-#dataForm {
+#dataform {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,6 +22,13 @@ body {
 }
 
 /* INPUTS */
+input {
+    border: 1px solid rgb(94, 94, 116);
+}
+
+input:focus {
+    outline: none;
+}
 
 /* Name inputs div */
 .name_inputs {
@@ -43,5 +51,14 @@ body {
 
 /* Pin Number */
 #pin_num {
-    padding: 2em;
+    padding: 2em 10em;
+}
+
+/* Submit Button */
+button {
+    padding: 1em;
+    border: none;
+    background-color: rgb(77, 77, 109);
+    color: rgb(18, 3, 18);
+    cursor: pointer;
 }
