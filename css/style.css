@@ -62,3 +62,17 @@ button {
     color: rgb(18, 3, 18);
     cursor: pointer;
 }
+
+.buttons {
+    display: flex;
+    gap: 1em;
+}
+
+/* Client Type Buttons */
+.type_client {
+    padding: 1em;
+    border: none;
+    background-color: gray;
+    color: rgb(18, 3, 18);
+    cursor: pointer;
+}
