@@ -19,21 +19,57 @@
          <div class="name_inputs">
 
             <!-- First Initial -->
-            <input type="text" id="first_initial" placeholder="Enter First Initial:" maxlength="1">
+            <input type="text" id="firstInput" placeholder="Enter First Initial:" maxlength="1">
 
             <!-- Last Name -->
-            <input type="text" id="last_name" placeholder="Enter Last Name:">
+            <input type="text" id="lastInput" placeholder="Enter Last Name:">
 
          </div>
 
          <!-- Pin Number -->
-        <input type="password" id="pin_num" placeholder="Enter Pin Number:" maxlength="4">
+        <input type="password" id="pinInput" placeholder="Enter Pin Number:" maxlength="4">
 
         <!-- Submit Button -->
          <button type="submit">Send Data</button>
      </form>
 
-     <script src="../js/data_from.js"></script>
+     <!-- <script src="../js/data_from.js"></script> -->
+    <script>
+        console.log("Transfer from this Page");
+
+
+// Query the form
+let dataForm = document.getElementById('dataform');
+
+        // add submit event listener
+        dataForm.addEventListener('submit', (e) => {
+            // Test Print
+            console.log("Submit Button Pressed");
+
+            // prevent resetting page
+            e.preventDefault();
+
+            // Get input values
+
+            // First Initial by value
+            const first = document.getElementById('firstInput').value;
+
+            // Last Name
+            const last = document.getElementById('lastInput').value;
+
+            // Pin Number
+            const pin = document.getElementById('pinInput').value;
+
+            // Encode parameters
+            const encodedFirst = encodeURIComponent(first);
+            const encodedLast = encodeURIComponent(last);
+            const encodedPin = encodeURIComponent(pin);
+            
+
+            // Redirect with URL parameters
+            window.location.href = `received.html?first=${encodedFirst}&last=${encodedLast}&pin=${encodedPin}`;
+        });
+    </script>
     
 </body>
 </html>

@@ -13,7 +13,44 @@
 
     <div id="received_data"></div>
 
-    <script src="../js/data_to.js"></script>
+    <!-- <script src="../js/data_to.js"></script> -->
+
+    <script>
+        console.log("The Data To page");
+
+        // Get URL Parameters (it's a search)
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // Retrieve and decode parameters
+
+        // First initial
+        const user_first = urlParams.get('first') ? 
+            decodeURIComponent(urlParams.get('first')) : 'N/A';
+        // Last Name
+        const user_last = urlParams.get('last') ?
+            decodeURIComponent(urlParams.get('last')) : 'N/A';
+        // Pin Number
+        const user_pin = urlParams.get('pin') ?
+            decodeURIComponent(urlParams.get('pin')) : 'N/A';
+
+        // Display received data
+
+        // first query the div to display data in
+        const dataDisplay = document.getElementById('received_data');
+
+        // concatenate the first init and last name
+        // let result = text1.concat(text2);
+
+        let userName = user_first.concat(user_last);
+        console.log(userName);
+
+        // set the inner HTML in the data display div
+        dataDisplay.innerHTML = `
+            <p>User: ${userName}</p>
+            <p>Pin: ${user_pin}</p>`
+        ;
+
+    </script>
     
 </body>
 </html>

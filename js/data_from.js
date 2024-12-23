@@ -15,15 +15,20 @@ dataForm.addEventListener('submit', (e) => {
     // Get input values
 
     // First Initial
-    const first_init = document.getElementById('first_initial');
+    const first_init = document.getElementById('first');
 
     // Last Name
-    const last_name = document.getElementById('last_name');
+    const last_name = document.getElementById('last');
+
+    // Pin Number
+    const pin_number = document.getElementById('pin');
 
     // Encode parameters
     const encodedName = encodeURIComponent(first_init);
     const encodedLast = encodeURIComponent(last_name);
+    const encodedPin = encodeURIComponent(pin_number);
+    
 
     // Redirect with URL parameters
-    window.location.href = `received.html?first_init=${encodedName}&last_name=${encodedLast}`;
+    window.location.href = `received.html?first_init=${encodedName}&last_name=${encodedLast}&pin_num=${encodedPin}`;
 });
