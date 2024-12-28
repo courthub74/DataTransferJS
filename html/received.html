@@ -57,7 +57,7 @@
         // let result = text1.concat(text2);
 
         let userName = user_first.concat(user_last);
-        console.log(userName);
+        // console.log(userName);
 
         // set the inner HTML in the data display div
         dataDisplay.innerHTML = `
@@ -82,29 +82,59 @@
                 acct_type_buttons.forEach(btn => btn.classList.remove('selected'));
                 // add the 'selected' css class to the selected button
                 acct_type_button.classList.add('selected');
-                // store the selected value in a variable
-                const selectedValue = acct_type_button.value;
-                console.log(selectedValue, 'Is the selected button');
+                // // store the selected value in a variable
+                // const selectedValue = acct_type_button.value;
+                // console.log(selectedValue, 'Is the selected button');
+                // return selectedValue;
+                // Create a function for the button value to be global
+                function getValue() {
+                    // store the selected value in a variable
+                    const selectedValue = acct_type_button.value;
+                    // console.log(selectedValue, 'Is the selected button');
+                    return selectedValue;
+                }
+                // Extract the selected button to here
+                const globalSelectedValue = getValue();
+                console.log('Global Selected Value: ', globalSelectedValue);
             });
         });
+
+        /*
+            For Each to Global Example
+
+            let globalValue;
+
+            array.forEach(item => {
+                globalValue = item; // Modifies the outer variable
+            });
+
+            console.log(globalValue); // Accessible here
+
+        **/
 
         // Submit Button function
             // in it send:
 
-        // add event listener to submit button
-        let submit_button = document.getElementById('submit');
+        // add event listener to form through submit button
+        // let submit_button = document.getElementById('submit');
+
+        let dataform_2 = document.getElementById('dataform_2');
         
-        submit_button.addEventListener('click', (e) => {
+        dataform_2.addEventListener('submit', (e) => {
+            // Prevent reset of page
+            e.preventDefault();
+            
             // above values to database
                 // Test Print
 
                 // The User Name
                 console.log(userName);
 
+                // The Pin Number
+                console.log(user_pin);
+
                 // The Selected User Type button
-
-
-
+                // console.log(globalSelectedValue);
         });
 
     </script>
