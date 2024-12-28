@@ -25,7 +25,7 @@
         </div>
 
         <!-- Submit Button -->
-        <button class="submit">Submit</button>
+        <button class="submit" id="submit">Submit</button>
      </form>
 
     <!-- <script src="../js/data_to.js"></script> -->
@@ -65,15 +65,47 @@
             <p>Pin: ${user_pin}</p>`
         ;
 
+        // Client type buttons
+
+        // First add event listener to the button selections
+
+        // Query through both buttons to grab the selected value
+        let acct_type_buttons = document.querySelectorAll('.type_client');
+
+        // Iterate through both and add event listeners
+        acct_type_buttons.forEach(acct_type_button => {
+            // add event listener to acct type button
+            acct_type_button.addEventListener('click', (e) => {
+                // Prevent reset of page
+                e.preventDefault();
+                // For each button in div remove the 'selected' class
+                acct_type_buttons.forEach(btn => btn.classList.remove('selected'));
+                // add the 'selected' css class to the selected button
+                acct_type_button.classList.add('selected');
+                // store the selected value in a variable
+                const selectedValue = acct_type_button.value;
+                console.log(selectedValue, 'Is the selected button');
+            });
+        });
+
         // Submit Button function
             // in it send:
 
-                // above values to database
-                // below selected button to database
+        // add event listener to submit button
+        let submit_button = document.getElementById('submit');
+        
+        submit_button.addEventListener('click', (e) => {
+            // above values to database
+                // Test Print
 
-                // Client type buttons
+                // The User Name
+                console.log(userName);
 
-                // set event listeners
+                // The Selected User Type button
+
+
+
+        });
 
     </script>
     

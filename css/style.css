@@ -1,6 +1,6 @@
 * {
    background-color: rgb(8, 2, 8);
-   color: rgb(77, 77, 109);
+   color: rgb(211, 211, 219);
    font-family: 'Times New Roman', Times, serif;
 }
 
@@ -31,7 +31,8 @@ body {
 
 /* INPUTS */
 input {
-    border: 1px solid rgb(94, 94, 116);
+    border: 1px solid rgb(211, 211, 219);
+    padding: 1em;
 }
 
 input:focus {
@@ -66,7 +67,7 @@ input:focus {
 button {
     padding: 1em;
     border: none;
-    background-color: rgb(77, 77, 109);
+    background-color: rgb(211, 211, 219);
     color: rgb(18, 3, 18);
     cursor: pointer;
 }
