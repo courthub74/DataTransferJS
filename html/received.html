@@ -67,65 +67,77 @@
 
         // Client type buttons
 
-        // First add event listener to the button selections
+        // Keep track of the selected button make up a value and set it to null
+        let selectedButton = null;
 
-        // Query through both buttons to grab the selected value
-        let acct_type_buttons = document.querySelectorAll('.type_client');
+         // First add event listeners to the button selections
+            // To change the css
 
-        // Iterate through both and add event listeners
-        acct_type_buttons.forEach(acct_type_button => {
-            // add event listener to acct type button
-            acct_type_button.addEventListener('click', (e) => {
-                // Prevent reset of page
-                e.preventDefault();
-                // For each button in div remove the 'selected' class
-                acct_type_buttons.forEach(btn => btn.classList.remove('selected'));
-                // add the 'selected' css class to the selected button
-                acct_type_button.classList.add('selected');
-                // // store the selected value in a variable
-                // const selectedValue = acct_type_button.value;
-                // console.log(selectedValue, 'Is the selected button');
-                // return selectedValue;
-                // Create a function for the button value to be global
-                function getValue() {
-                    // store the selected value in a variable
-                    const selectedValue = acct_type_button.value;
-                    // console.log(selectedValue, 'Is the selected button');
-                    return selectedValue;
-                }
-                // Extract the selected button to here
-                const globalSelectedValue = getValue();
-                console.log('Global Selected Value: ', globalSelectedValue);
-            });
+        // Employer
+        let employer_button = document.getElementById('employer');
+        // Employee
+        let employee_button = document.getElementById('employee');
+        // Submit
+        let submit
+        // Two different buttons event listener for each
+
+        // Employer
+        employer_button.addEventListener('click', () => {
+            // set this as selected button
+            selectedButton = employer_button.value;
+            // add the 'selected' class
+            employer_button.classList.add('selected');
+            // remove 'selected' class from employee button
+            employee_button.classList.remove('selected');
+            // Test Print
+            console.log("The selected button: ", selectedButton);
         });
 
-        /*
-            For Each to Global Example
+        // Employee
+        employee_button.addEventListener('click', () => {
+            // set this as selected button
+            selectedButton = employee_button.value;
+            // add the 'selected' class
+            employee_button.classList.add('selected');
+            // remove 'selected' class from employee button
+            employer_button.classList.remove('selected');
+            // Test Print
+            console.log("The selected button: ", selectedButton);
+        });
 
-            let globalValue;
+        // // Employer
+        // document.getElementById('employer').addEventListener('click', (e) => {
+        //     // e.preventDefault();
+        //     if (selectedButton) {
+        //         // Remove 'selected' css class
+        //         // selectedButton.classList.remove('selected');
+        //         employer_button.classList.remove('selected');
+        //     }
+        //     selectedButton = this;
+        //     console.log("Employer Selected Button");
+        //     // Add 'selected' css class
+        //     // selectedButton.classList.add('selected');
+        //     employer_button.classList.add('selected');
+        // });
 
-            array.forEach(item => {
-                globalValue = item; // Modifies the outer variable
-            });
+        // // Employee
+        // document.getElementById('employee').addEventListener('click', (e) => {
+        //     // e.preventDefault();
+        //     if (selectedButton) {
+        //         console.log("Employee Selected Button");
+        //     }
+        // });
 
-            console.log(globalValue); // Accessible here
 
-        **/
-
-        // Submit Button function
-            // in it send:
-
-        // add event listener to form through submit button
-        // let submit_button = document.getElementById('submit');
 
         let dataform_2 = document.getElementById('dataform_2');
         
         dataform_2.addEventListener('submit', (e) => {
             // Prevent reset of page
             e.preventDefault();
-            
-            // above values to database
-                // Test Print
+             
+            // BELOW values to database
+                // Test Print first
 
                 // The User Name
                 console.log(userName);
@@ -134,7 +146,12 @@
                 console.log(user_pin);
 
                 // The Selected User Type button
-                // console.log(globalSelectedValue);
+                // If there is a selected button, store the value in variable
+            if (selectedButton) {
+                console.log('Selected option: ', selectedButton);
+            }
+
+            // NOW send to the database
         });
 
     </script>
