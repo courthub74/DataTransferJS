@@ -70,6 +70,16 @@ button {
     background-color: rgb(211, 211, 219);
     color: rgb(18, 3, 18);
     cursor: pointer;
+    font-weight: bold;
+}
+
+button.selected {
+    padding: 1em;
+    border: none;
+    background-color: rgb(13, 13, 50);
+    color: rgb(172, 77, 172);
+    cursor: pointer;
+    font-weight: bold;
 }
 
 .buttons {
