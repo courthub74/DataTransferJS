@@ -20,8 +20,8 @@
 
         <!-- Buttons to select from -->
         <div class="buttons">
-            <button class="type_client" value="employer" id="employer">Employer</button>
-            <button class="type_client" value="employee" id="employee">Employee</button>
+            <button class="type_client" value="Employer" id="employer">Employer</button>
+            <button class="type_client" value="Employee" id="employee">Employee</button>
         </div>
 
         <!-- Submit Button -->
@@ -159,7 +159,7 @@
             const encodedAcct_type = encodeURIComponent(account);
 
             // AND send to confirmation page
-            window.location.href = `confirmed.html?user=${encodedUser}&pin=${encodedPin}&acct=${account}`;
+            window.location.href = `confirmed.html?user=${encodedUser}&pin=${encodedPin}&account=${account}`;
 
             // Then send to the database
         });
