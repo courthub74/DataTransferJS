@@ -78,11 +78,14 @@
         // Employee
         let employee_button = document.getElementById('employee');
         // Submit
-        let submit
+        // let submit
+
         // Two different buttons event listener for each
 
         // Employer
-        employer_button.addEventListener('click', () => {
+        employer_button.addEventListener('click', (e) => {
+            // prevent reset
+            e.preventDefault();
             // set this as selected button
             selectedButton = employer_button.value;
             // add the 'selected' class
@@ -94,7 +97,9 @@
         });
 
         // Employee
-        employee_button.addEventListener('click', () => {
+        employee_button.addEventListener('click', (e) => {
+            // prevent reset
+            e.preventDefault();
             // set this as selected button
             selectedButton = employee_button.value;
             // add the 'selected' class
@@ -105,34 +110,13 @@
             console.log("The selected button: ", selectedButton);
         });
 
-        // // Employer
-        // document.getElementById('employer').addEventListener('click', (e) => {
-        //     // e.preventDefault();
-        //     if (selectedButton) {
-        //         // Remove 'selected' css class
-        //         // selectedButton.classList.remove('selected');
-        //         employer_button.classList.remove('selected');
-        //     }
-        //     selectedButton = this;
-        //     console.log("Employer Selected Button");
-        //     // Add 'selected' css class
-        //     // selectedButton.classList.add('selected');
-        //     employer_button.classList.add('selected');
-        // });
-
-        // // Employee
-        // document.getElementById('employee').addEventListener('click', (e) => {
-        //     // e.preventDefault();
-        //     if (selectedButton) {
-        //         console.log("Employee Selected Button");
-        //     }
-        // });
-
-
-
+        // Submit Button to Submit the form
         let dataform_2 = document.getElementById('dataform_2');
+
+        // Try the Submit Button for Click instead
+        let submit_button = document.getElementById('submit');
         
-        dataform_2.addEventListener('submit', (e) => {
+        submit_button.addEventListener('click', (e) => {
             // Prevent reset of page
             e.preventDefault();
              
@@ -151,7 +135,24 @@
                 console.log('Selected option: ', selectedButton);
             }
 
-            // NOW send to the database
+            // NOW send to the database (maybe use encoded parameters)
+            // User Name
+            const user = userName;
+            // Pin Number
+            const pin = user_pin;
+
+            // Encode Parameters
+
+            // User Encoded
+            const encodedUser = encodeURIComponent(user);
+
+            // Pin Number Encoded
+            const encodedPin = encodeURIComponent(pin);
+
+            // AND send to confirmation page
+            window.location.href = `confirmed.html?user=${encodedUser}&pin=${encodedPin}`;
+
+            // Then send to the database
         });
 
     </script>

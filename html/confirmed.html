@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation</title>
+</head>
+<body>
+
+    <h1>Confirmation Page</h1>
+
+    <!-- Confirmation Data to display -->
+    <div id="confirm_data"></div>
+
+    <!-- Yes or No -->
+    <a href="#">Yes</a>
+    <p>or</p>
+    <a href="./received.html">No</a>
+
+    <script>
+        console.log("Data to confirmation Page");
+
+        // Get URL Parameters (it's a search)
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // Retrieve and decode parameters (from Received.html page)
+
+        // User Encoded
+        const user_name = urlParams.get('user') ?
+            decodeURIComponent(urlParams.get('user')) : 'N/A';
+
+        // Pin Encoded
+        const pin_number = urlParams.get('pin') ?
+            decodeURIComponent(urlParams.get('pin')) : 'N/A';
+        
+        // Display retrieved data
+
+        // first query the div to display the data in
+        const confirm_display = document.getElementById('confirm_data');
+
+        // set the inner HTML in the data display div
+        confirm_display.innerHTML = `
+            <p>User: ${user_name}</p>
+            <p>Pin: ${pin_number}</p>`
+        ;
+
+    </script>
+    
+</body>
+</html>
