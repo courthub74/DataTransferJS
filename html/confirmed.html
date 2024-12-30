@@ -39,7 +39,7 @@
 
         // Account type Encoded
         const acct_type = urlParams.get('account') ?
-            decodeURIComponent(urlParams.get('account')) : 'N/A';
+            decodeURIComponent(urlParams.get('account')) : 'Not retrieved';
         
         // Display retrieved data
 
@@ -51,7 +51,7 @@
             <h2>You are now registered:</h2>
             <p>User: ${user_name}</p>
             <p>Pin: ${pin_number}</p>
-            <p>Account Type: ${acct_type}`
+            <p>Account Type: ${acct_type}</p>`
         ;
     </script>
     
