@@ -95,3 +95,17 @@ button.selected {
     color: rgb(18, 3, 18);
     cursor: pointer;
 }
+
+/* Confirmation Page */
+.yes_no {
+    display: flex;
+    gap: 1em;
+}
+
+.yes_no a {
+    background-color: rgb(211, 211, 219);
+    padding: 1em 2em;
+    color: rgb(8, 2, 8);
+    font-weight: bold;
+    text-decoration: none;
+}
