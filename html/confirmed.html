@@ -36,6 +36,10 @@
         // Pin Encoded
         const pin_number = urlParams.get('pin') ?
             decodeURIComponent(urlParams.get('pin')) : 'N/A';
+
+        // Account type Encoded
+        const acct_type = urlParams.get('account') ?
+            decodeURIComponent(urlParams.get('account')) : 'N/A';
         
         // Display retrieved data
 
@@ -44,10 +48,11 @@
 
         // set the inner HTML in the data display div
         confirm_display.innerHTML = `
+            <h2>You are now registered:</h2>
             <p>User: ${user_name}</p>
-            <p>Pin: ${pin_number}</p>`
+            <p>Pin: ${pin_number}</p>
+            <p>Account Type: ${acct_type}`
         ;
-
     </script>
     
 </body>

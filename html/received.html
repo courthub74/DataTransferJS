@@ -111,7 +111,7 @@
         });
 
         // Submit Button to Submit the form
-        let dataform_2 = document.getElementById('dataform_2');
+        // let dataform_2 = document.getElementById('dataform_2');
 
         // Try the Submit Button for Click instead
         let submit_button = document.getElementById('submit');
@@ -132,7 +132,10 @@
                 // The Selected User Type button
                 // If there is a selected button, store the value in variable
             if (selectedButton) {
-                console.log('Selected option: ', selectedButton);
+                console.log('Selected option (if): ', selectedButton);
+                // const account = selectedButton;
+                // // Account type Encoded
+                // const encodedAcct_type = encodeURIComponent(account);
             }
 
             // NOW send to the database (maybe use encoded parameters)
@@ -140,6 +143,8 @@
             const user = userName;
             // Pin Number
             const pin = user_pin;
+            // Account Type
+            const account = selectedButton;
 
             // Encode Parameters
 
@@ -149,8 +154,11 @@
             // Pin Number Encoded
             const encodedPin = encodeURIComponent(pin);
 
+            // // Account type Encoded
+            const encodedAcct_type = encodeURIComponent(account);
+
             // AND send to confirmation page
-            window.location.href = `confirmed.html?user=${encodedUser}&pin=${encodedPin}`;
+            window.location.href = `confirmed.html?user=${encodedUser}&pin=${encodedPin}&acct=${account}`;
 
             // Then send to the database
         });
