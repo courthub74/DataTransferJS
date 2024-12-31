@@ -29,6 +29,30 @@ body {
     gap: 2em;
 }
 
+/* Received Data */
+#received_data {
+    display: none;
+}
+
+/* Confirmed Data */
+#confirm_data {
+    font-size: 1.2rem;
+}
+
+/* Registered as */
+.tites {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* The Credentials */
+.creds {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 /* INPUTS */
 input {
     border: 1px solid rgb(211, 211, 219);
@@ -94,9 +118,11 @@ button.selected {
     background-color: gray;
     color: rgb(18, 3, 18);
     cursor: pointer;
+    border-radius: 5px;
 }
 
 /* Confirmation Page */
+
 .yes_no {
     display: flex;
     gap: 1em;
@@ -108,4 +134,5 @@ button.selected {
     color: rgb(8, 2, 8);
     font-weight: bold;
     text-decoration: none;
+    border-radius: 5px;
 }

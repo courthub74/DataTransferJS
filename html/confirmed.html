@@ -14,11 +14,13 @@
     <!-- Confirmation Data to display -->
     <div id="confirm_data"></div>
 
+    <h4>Is this information correct?</h4>
+
     <!-- Yes or No -->
     <div class="yes_no">
         <a href="#">Yes</a>
         <p>or</p>
-        <a href="./received.html">No</a>
+        <a href="./index.html">No</a>
     </div>
 
     <script>
@@ -46,12 +48,15 @@
         // first query the div to display the data in
         const confirm_display = document.getElementById('confirm_data');
 
-        // set the inner HTML in the data display div
+        /**Grab the encoded parameters and 
+         * set them to the inner HTML in the data display div*/
         confirm_display.innerHTML = `
-            <h2>You are now registered:</h2>
-            <p>User: ${user_name}</p>
-            <p>Pin: ${pin_number}</p>
-            <p>Account Type: ${acct_type}</p>`
+            <p class="tites">You are now registered as:</p>
+            <div class="creds">
+                <p>${user_name}</p>
+                <p>${acct_type}</p>
+                <p>Pin: ${pin_number}</p>
+            </div>`
         ;
     </script>
     
